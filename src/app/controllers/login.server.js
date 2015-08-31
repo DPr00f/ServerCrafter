@@ -21,7 +21,7 @@ class LoginController {
       }
     }).then((user) => {
       if (!user || !passwordHash.verify(req.body.password, user.password_hash)) {
-        res.status(403).json(wrongPassword);
+        return res.status(403).json(wrongPassword);
       }
       token = jwt.sign({data: user, time: new Date()}, config.JWT_SECRET, { expiresInMinutes: 60*5 });
       req.session.token = token;
