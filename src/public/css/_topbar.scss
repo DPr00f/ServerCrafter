@@ -1,0 +1,24 @@
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $topbar-height;
+  background: transparent;
+  box-shadow: 0 0 6px;
+}
+
+.content--pusher {
+  position: relative;
+  height: $topbar-height;
+}
+
+.logo {
+  position: relative;
+  float: left;
+  width: $navbar-width;
+  background: $logo-background;
+  color: $logo-color;
+  line-height: $topbar-height;
+  text-align: center;
+}

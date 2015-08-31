@@ -1,0 +1,101 @@
+.navbar {
+  position: fixed;
+  top: $topbar-height;
+  bottom: 0;
+  left: 0;
+  width: $navbar-width;
+  background: $navbar-background;
+}
+
+
+.navbar__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: $navbar-menu-bottom-height;
+  overflow: auto;
+}
+
+.navbar__menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar__item {
+  position: relative;
+  height: $navbar-item-height;
+  line-height: $navbar-item-height;
+}
+
+.navbar__item--category {
+  padding: $navbar-item-category-padding;
+  margin-top: $navbar-item-category-margin-top;
+  font-size: $navbar-item-category-font-size;
+  line-height: $navbar-item-height;
+  color: $navbar-item-category-color;
+  text-transform: $navbar-item-category-text-transform;
+}
+
+
+.navbar__icon {
+  margin-right: $navbar-icon-margin-right;
+  &:before {
+    font-size: $navbar-icon-font-size;
+  }
+}
+
+.navbar__link {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: block;
+  color: $navbar-item-color;
+  text-decoration: none;
+  padding: $navbar-item-padding;
+  &:hover {
+    background: $navbar-item-hover-background;
+    color: $navbar-item-color;
+  }
+}
+
+.navbar__link.active {
+  background: $navbar-item-active-background;
+  color: $navbar-item-active-color;
+}
+
+
+.navbar__menu--bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: $navbar-menu-bottom-height;
+  background: $navbar-menu-bottom-background;
+}
+
+.navbar__link--bottom {
+  position: relative;
+  width: ($navbar-width / 3);
+  display: block;
+  float: left;
+  height: $navbar-menu-bottom-height;
+  text-align: center;
+  line-height: $navbar-menu-bottom-height;
+  text-decoration: none;
+  color: $navbar-menu-bottom-color;
+
+  &:hover {
+    background: $navbar-menu-bottom-hover-background;
+    color: $navbar-menu-bottom-hover-color;
+  }
+}
+
+.navbar__icon--bottom {
+  &:before {
+    font-size: $navbar-icon-bottom-font-size;
+  }
+}

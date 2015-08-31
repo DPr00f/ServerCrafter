@@ -1,0 +1,14 @@
+.content {
+  margin-left: $navbar-width;
+  padding: $content-padding;
+}
+
+.content__area {
+  position: relative;
+}
+
+.content__item {
+  background: $content-item-background;
+  border-radius: $content-item-border-radius;
+  padding: $content-item-padding;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "ServerCrafter",
+  "version": "1.0.0",
+  "authors": [
+    "DPr00f <jocolopes@gmail.com>"
+  ],
+  "main": "dist/cluster.js",
+  "moduleType": [
+    "es6",
+    "node"
+  ],
+  "license": "MIT",
+  "homepage": "servercrafter.local",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.sass": "~2.0.0"
+  }
+}
