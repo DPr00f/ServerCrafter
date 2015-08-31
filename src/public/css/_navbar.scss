@@ -41,7 +41,7 @@
 
 .navbar__icon {
   margin-right: $navbar-icon-margin-right;
-  &:before {
+  &::before {
     font-size: $navbar-icon-font-size;
   }
 }

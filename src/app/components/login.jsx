@@ -3,6 +3,7 @@ import SocketController from '../controllers/socket.client';
 import SocketStore from '../stores/socket.client';
 import SocketAction from '../actions/socket.client';
 import SocketEvents from '../events/socket';
+import Input from './input.jsx';
 
 
 class Login extends React.Component {
@@ -43,8 +44,8 @@ class Login extends React.Component {
       method: 'POST',
       url: `/login`,
       json: {
-        username: React.findDOMNode(this.refs.username).value,
-        password: React.findDOMNode(this.refs.password).value
+        username: React.findDOMNode(this.refs.username.refs.input).value,
+        password: React.findDOMNode(this.refs.password.refs.input).value
       }
     },
     (err, httpResponse, body) => {
@@ -84,8 +85,8 @@ class Login extends React.Component {
           <div className="login__logo"></div>
           <div className="login__inputs">
             <form onSubmit={ this.handleSubmit.bind(this) }>
-              <input ref="username" className="login__input" type="text" placeholder="Username / Email" />
-              <input ref="password" className="login__input" type="password" placeholder="password" />
+              <Input ref="username" id="username" extra={{ autoComplete: "off" }}>Username / Email</Input>
+              <Input ref="password" id="password" isPassword={true} extra={{ autoComplete: "off" }}>Password</Input>
               <input type="submit" className="login__button" value="Login" />
             </form>
           </div>

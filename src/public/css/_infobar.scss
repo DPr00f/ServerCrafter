@@ -28,7 +28,7 @@
   float: left;
   line-height: $topbar-height - (2 * $topbar-padding);
   margin-left: $infobar-link-margin-left;
-  &:before {
+  &::before {
     font-size: $infobar-link-font-size;
   }
 }
