@@ -4,6 +4,7 @@ import SocketStore from '../stores/socket.client';
 import SocketAction from '../actions/socket.client';
 import SocketEvents from '../events/socket';
 import Input from './input.jsx';
+import Button from './button.jsx';
 
 
 class Login extends React.Component {
@@ -27,6 +28,7 @@ class Login extends React.Component {
     });
 
     SocketStore.instance.on(SocketEvents.FAILED_AUTH, ()=> {
+      console.log("Failed auth");
       this.setState({
         isLogged: false
       });
@@ -87,7 +89,9 @@ class Login extends React.Component {
             <form onSubmit={ this.handleSubmit.bind(this) }>
               <Input ref="username" id="username" extra={{ autoComplete: "off" }}>Username / Email</Input>
               <Input ref="password" id="password" isPassword={true} extra={{ autoComplete: "off" }}>Password</Input>
-              <input type="submit" className="login__button" value="Login" />
+              <Button type="submit" className="login__button">
+                <span>Login</span>
+              </Button>
             </form>
           </div>
         </div>

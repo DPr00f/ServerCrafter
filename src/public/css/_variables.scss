@@ -3,6 +3,8 @@ $front-color: #22313F !default;
 $anchor-color: #2980b9 !default;
 $anchor-hover-color: #22313F !default;
 
+$box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+
 $topbar-height: 66px !default;
 
 $navbar-width: 260px !default;
@@ -45,14 +47,28 @@ $content-padding: 30px !default;
 $content-item-background: #FFFFFF !default;
 $content-item-border-radius: 3px !default;
 $content-item-padding: 20px !default;
+$content-item-input-background: #E4F1FE !default;
+$content-item-input-color: #76838D !default;
 
 $notice-padding: 20px !default;
 $notice-margin-bottom: 20px !default;
 $notice-background: #FFFFFF !default;
 
+$input-large-width: 500px !default;
+$input-medium-width: 350px !default;
+$input-small-width: 200px !default;
 $input-color: #2980b9 !default;
 $input-background: #FFFFFF !default;
 $input-field-padding: 30px 15px 0 !default;
 $input-field-font-size: 13px !default;
 $input-label-font-size: 70.25% !default;
 $input-margin-bottom: 10px !default;
+
+$button-color: #76838E !default;
+$button-hover-color: #2980b9 !default;
+$button-hover-background: rgba(41, 128, 185, 0.1) !default;
+$button-border: 1px solid #76838E !default;
+$button-border-radius: 5px !default;
+$button-min-width: 150px !default;
+$button-max-width: 250px !default;
+$button-padding: 1em 2em !default;

@@ -5,7 +5,7 @@
   right: 0;
   height: $topbar-height;
   background: transparent;
-  box-shadow: 0 0 6px;
+  box-shadow: $box-shadow;
 }
 
 .content--pusher {

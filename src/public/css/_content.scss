@@ -11,4 +11,24 @@
   background: $content-item-background;
   border-radius: $content-item-border-radius;
   padding: $content-item-padding;
+  box-shadow: $box-shadow;
+}
+
+.content__item .input__field {
+  color: $content-item-input-color;
+}
+
+.content__item .input__label {
+  background: $content-item-input-background;
+  color: $content-item-input-color;
+}
+
+.content__item .input__field:focus + .input__label::before,
+.content__item .input--filled .input__label::before {
+	border-color: $content-item-input-color;
+}
+
+.content__item .input__field:focus + .input__label .input__labelContent,
+.content__item .input--filled .input__label .input__labelContent {
+	color: $content-item-input-background;
 }

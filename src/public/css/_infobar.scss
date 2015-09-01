@@ -6,6 +6,7 @@
   height: $topbar-height - (2 * $topbar-padding);
   background: $infobar-background;
   padding: $topbar-padding;
+  z-index: 10;
 }
 
 

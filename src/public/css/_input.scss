@@ -9,6 +9,18 @@
   margin-bottom: $input-margin-bottom;
 }
 
+.input--large {
+  max-width: $input-large-width;
+}
+
+.input--medium {
+  max-width: $input-medium-width;
+}
+
+.input--small {
+  max-width: $input-small-width;
+}
+
 .input__field {
   position: absolute;
   display: block;
