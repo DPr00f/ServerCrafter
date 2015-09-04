@@ -2,27 +2,33 @@ import React from 'react';
 import InfoBar from './infobar.jsx';
 import Router from 'react-router';
 import ReactTooltip from 'react-tooltip';
+import ApplicationStore from '../stores/application.client';
+import ApplicationEvents from '../events/application';
 
 class Servers extends React.Component {
-  static get defaultProps() {
-    return {
-      servers: []
-    };
-  }
-
-
   constructor(props) {
     super(props);
     this.state = {
-      servers: this.props.servers
+      servers: ApplicationStore.instance.getServers().slice(),
+      newServer: {}
     };
   }
 
 
   componentDidMount() {
-    if (!this.state.servers.length) {
-      console.log("Request list of servers now");
-    }
+    ApplicationStore.instance.on(ApplicationEvents.ADDED_SERVER, this.onServerAdded.bind(this));
+  }
+
+  componentWillUnmount() {
+    ApplicationStore.instance.removeAllListeners(ApplicationEvents.ADDED_SERVER);
+  }
+
+
+  onServerAdded(serverInfo) {
+    this.setState({
+      servers: ApplicationStore.instance.getServers().slice(),
+      newServer: serverInfo
+    });
   }
 
 
@@ -35,7 +41,13 @@ class Servers extends React.Component {
         { !!this.state.servers.length ?
           <div className="content__area">
             <div className="content__item">
-              show servers here!
+              {
+                this.state.servers.map(function addServer(server) {
+                  return (
+                    <div key={ server.id }>{server.displayName}</div>
+                  );
+                })
+              }
             </div>
           </div>
           :

@@ -9,6 +9,7 @@ import session from 'cookie-session';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import SocketIOConnection from './socket.io.connection';
+import GlobalsMiddleware from './middlewares/globals.server';
 import '../log';
 
 import User from './models/user';
@@ -44,11 +45,7 @@ class Application {
       secret: config.SESSION_SECRET
     }));
 
-    this.app.use((req, res, next) => {
-      this.app.locals.title = 'ServerCrafter';
-      this.app.locals.token = req.session && req.session.token ? req.session.token : false;
-      next();
-    });
+    this.app.use(GlobalsMiddleware.bind(this, this.app));
   }
 
 

@@ -1,5 +1,3 @@
-import merge from 'merge';
-
 class ServersController {
   render(req, res) {
     this.renderPage(req, res);

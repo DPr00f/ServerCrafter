@@ -3,7 +3,8 @@ import React from 'react';
 class Input extends React.Component {
   static get defaultProps() {
     return {
-      extra: {}
+      extra: {},
+      name: ""
     };
   }
 
@@ -36,7 +37,7 @@ class Input extends React.Component {
     };
     return (
       <div className={classNames.container}>
-        <input {...this.props.extra} ref="input" onBlur={this.onBlur.bind(this)} className={classNames.field} type={this.props.isPassword ? "password" : "text"} id={this.props.id} />
+        <input name={ this.props.name } {...this.props.extra} ref="input" onBlur={this.onBlur.bind(this)} className={classNames.field} type={this.props.isPassword ? "password" : "text"} id={this.props.id} />
         <label className={classNames.label} htmlFor={this.props.id}>
           <span className={classNames.labelContent}>{ this.props.children }</span>
         </label>

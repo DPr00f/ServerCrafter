@@ -19,6 +19,8 @@ var config = {
   DB: "mysql://root:root@localhost:3306/servercrafter",
   PAGE_URL: "http://localhost:3001/",
   SESSION_SECRET: 'YjAKCYrQCxccZujYMBir2BscRjtaLaNobPfLsB6rGesHxzUmAd',
+  CIPHER_ALGORITHM: 'aes-256-ctr',
+  CIPHER_SECRET: 'eqsGzJxkceDPEedJWNyBXBihKbK99xzAxkgTmshLQJRFPiiWfn',
   JWT_SECRET: 'QHtyJNwadQaWnoYTyFLf43aZcAqWiPZQVqeQAHexCNFKVgUHcu',
   CONNECT_SOCKET_IO_REDIS: false,
   SOCKET_IO_REDIS: {

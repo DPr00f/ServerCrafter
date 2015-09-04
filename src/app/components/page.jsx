@@ -2,6 +2,7 @@ import React from 'react';
 import TopLayout from './layouts/top.jsx';
 import LeftLayout from './layouts/left.jsx';
 import RightLayout from './layouts/right.jsx';
+import Notifications from './notifications.jsx';
 import Login from './login.jsx';
 
 class Page extends React.Component {
@@ -16,6 +17,7 @@ class Page extends React.Component {
         <body>
           <Login { ...this.props }>
             <div className="content--pusher" />
+            <Notifications { ...this.props } />
             <TopLayout { ...this.props } />
             <LeftLayout { ...this.props } />
             <RightLayout { ...this.props } />

@@ -1,4 +1,4 @@
-import Client from 'react-engine/lib/client';
+import Booter from '../../app/controllers/booter.client';
 import Routes from '../../app/components/routes.jsx';
 
 require('../../app/components/**/*.jsx', {glob: true});
@@ -11,5 +11,5 @@ var options = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  Client.boot(options);
+  Booter.startRouter(options);
 });

@@ -26,6 +26,14 @@ class SocketStore extends EventEmitter {
   emitAuthenticated() {
     this.emit(SocketEvents.AUTHENTICATED);
   }
+
+  emitServerAdded() {
+    this.emit(SocketEvents.ADDED_SERVER);
+  }
+
+  emitGlobalServerAdded(serverInfo) {
+    this.emit(SocketEvents.GLOBAL_ADDED_SERVER, serverInfo);
+  }
 }
 
 SocketDispatcher.instance.register(function(action) {
@@ -41,6 +49,22 @@ SocketDispatcher.instance.register(function(action) {
 
     case SocketEvents.AUTHENTICATED:
       SocketStore.instance.emitAuthenticated();
+      break;
+
+    case SocketEvents.ADD_SERVER:
+      SocketController.instance.addServer(action.form);
+      break;
+
+    case SocketEvents.ADDED_SERVER:
+      SocketStore.instance.emitServerAdded();
+      break;
+
+    case SocketEvents.GLOBAL_ADDED_SERVER:
+      SocketStore.instance.emitGlobalServerAdded(action.serverInfo);
+      break;
+
+    case SocketEvents.TEST_SERVER:
+      SocketController.instance.testServer(action.form);
       break;
     default:
       // no op

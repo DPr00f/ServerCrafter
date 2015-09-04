@@ -5,6 +5,7 @@ import Symbol from 'es6-symbol';
 import SioJWT from 'socketio-jwt';
 import jwt from 'jsonwebtoken';
 import SocketEvents from './events/socket';
+import AddServerController from './controllers/add.server.server';
 
 var singleton = Symbol();
 var singletonEnforcer = Symbol();
@@ -64,16 +65,41 @@ class SocketIOConnection {
       console.debug('Socket disconnected id:', socket.id);
       this.connectionCount--;
     });
+
+    socket.on(SocketEvents.ADD_SERVER, AddServerController.socketNewServer.bind(AddServerController, socket));
+    socket.on(SocketEvents.TEST_SERVER, AddServerController.socketTestServer.bind(AddServerController, socket));
   }
 
 
-  getToken(profile, secret, config = {expiresInMinutes: 60*5}) {
+  serverAdded(socket, serverInfo) {
+    this.broadcast(SocketEvents.GLOBAL_ADDED_SERVER, serverInfo);
+    socket.emit(SocketEvents.ADDED_SERVER);
+  }
+
+
+  failedAddingServer(socket, message) {
+    socket.emit(SocketEvents.FAILED_ADDING_SERVER, message);
+  }
+
+
+  successServerTest(socket, message) {
+    socket.emit(SocketEvents.SERVER_TEST_SUCCESS, message);
+  }
+
+
+  failedServerTest(socket, message) {
+    socket.emit(SocketEvents.SERVER_TEST_FAILED, message);
+  }
+
+
+  getToken(profile, secret, config = { expiresInMinutes: 60 * 5 }) {
     return jwt.sign(profile, secret, config);
   }
 
 
   broadcast(eventName, message) {
     console.debug('Transmitted:', eventName);
+    console.debug('With message:', message);
     this.transport.emit(eventName, message);
   }
 }

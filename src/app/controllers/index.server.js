@@ -1,5 +1,3 @@
-import merge from 'merge';
-
 class IndexController {
   render(req, res) {
     this.renderPage(req, res);
