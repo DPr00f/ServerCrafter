@@ -1,8 +1,8 @@
 import React from 'react';
 import Router from 'react-router';
-import Index from './index.jsx';
-import Servers from './servers.jsx';
-import AddServer from './add.server.jsx';
+import Index from './pages/index.jsx';
+import Servers from './pages/servers.jsx';
+import AddServer from './pages/add.server.jsx';
 import App from './app.jsx';
 
 var routes = (

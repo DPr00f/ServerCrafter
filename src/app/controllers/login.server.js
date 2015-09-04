@@ -2,7 +2,7 @@ import User from '../models/user';
 import passwordHash from 'password-hash';
 import Sequelize from 'sequelize';
 import config from '../../config';
-import jwt from 'jsonwebtoken';
+import SocketIOConnection from '../socket.io.connection';
 
 class LoginController {
   login(req, res) {
@@ -23,7 +23,7 @@ class LoginController {
       if (!user || !passwordHash.verify(req.body.password, user.password_hash)) {
         return res.status(403).json(wrongPassword);
       }
-      token = jwt.sign({data: user, time: new Date()}, config.JWT_SECRET, { expiresInMinutes: 60*5 });
+      token = SocketIOConnection.instance.getToken({data: user, time: new Date()}, config.JWT_SECRET);
       req.session.token = token;
       res.json({
         token: token

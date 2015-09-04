@@ -1,5 +1,5 @@
 import React from 'react';
-import InfoBar from './infobar.jsx';
+import InfoBar from '../infobar.jsx';
 
 class Index extends React.Component {
 
@@ -7,7 +7,7 @@ class Index extends React.Component {
     return (
       <div className="content__index">
         <InfoBar name="Dashboard" />
-        Wooohoooo!
+        Dashboard
       </div>
     );
   }

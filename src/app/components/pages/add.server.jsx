@@ -1,13 +1,13 @@
 import React from 'react';
 import Router from 'react-router';
-import InfoBar from './infobar.jsx';
-import Input from './input.jsx';
-import Button from './button.jsx';
+import InfoBar from '../infobar.jsx';
+import Input from '../input.jsx';
+import Button from '../button.jsx';
 import ReactTooltip from 'react-tooltip';
-import SocketEvents from '../events/socket';
-import SocketAction from '../actions/socket.client';
-import SocketStore from '../stores/socket.client';
-import router from '../controllers/router.client';
+import SocketEvents from '../../events/socket';
+import SocketAction from '../../actions/socket.client';
+import SocketStore from '../../stores/socket.client';
+import router from '../../controllers/router.client';
 
 
 class AddServer extends React.Component {
@@ -34,7 +34,6 @@ class AddServer extends React.Component {
 
 
   componentDidMount() {
-    this.router = require('../controllers/router.client');
     SocketStore.instance.on(SocketEvents.ADDED_SERVER, this.onServerAddedSuccess.bind(this));
   }
 
@@ -45,7 +44,7 @@ class AddServer extends React.Component {
 
 
   onServerAddedSuccess() {
-    this.router.transitionTo("servers");
+    router.transitionTo("servers");
   }
 
 

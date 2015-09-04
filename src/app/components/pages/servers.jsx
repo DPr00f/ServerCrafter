@@ -1,9 +1,9 @@
 import React from 'react';
-import InfoBar from './infobar.jsx';
+import InfoBar from '../infobar.jsx';
 import Router from 'react-router';
 import ReactTooltip from 'react-tooltip';
-import ApplicationStore from '../stores/application.client';
-import ApplicationEvents from '../events/application';
+import ApplicationStore from '../../stores/application.client';
+import ApplicationEvents from '../../events/application';
 
 class Servers extends React.Component {
   constructor(props) {

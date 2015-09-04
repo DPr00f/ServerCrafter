@@ -1,10 +1,10 @@
 import React from 'react';
-import SocketController from '../controllers/socket.client';
-import SocketStore from '../stores/socket.client';
-import SocketAction from '../actions/socket.client';
-import SocketEvents from '../events/socket';
-import Input from './input.jsx';
-import Button from './button.jsx';
+import SocketController from '../../controllers/socket.client';
+import SocketStore from '../../stores/socket.client';
+import SocketAction from '../../actions/socket.client';
+import SocketEvents from '../../events/socket';
+import Input from '../input.jsx';
+import Button from '../button.jsx';
 
 
 class Login extends React.Component {

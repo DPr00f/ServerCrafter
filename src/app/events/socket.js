@@ -10,5 +10,6 @@ export default {
   SERVER_TEST_SUCCESS: 'SocketEvents.SERVER_TEST_SUCCESS',
   SERVER_TEST_FAILED: 'SocketEvents.SERVER_TEST_FAILED',
 
-  DISCONNECT: 'disconnect'
+  DISCONNECT: 'disconnect',
+  CONNECTION: 'connection'
 };

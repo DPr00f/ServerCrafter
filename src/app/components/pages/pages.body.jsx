@@ -1,11 +1,11 @@
 import React from 'react';
-import TopLayout from './layouts/top.jsx';
-import LeftLayout from './layouts/left.jsx';
-import RightLayout from './layouts/right.jsx';
-import Notifications from './notifications.jsx';
+import TopLayout from '../layouts/top.jsx';
+import LeftLayout from '../layouts/left.jsx';
+import RightLayout from '../layouts/right.jsx';
+import Notifications from '../notifications.jsx';
 import Login from './login.jsx';
 
-class Page extends React.Component {
+class PagesBody extends React.Component {
   render() {
     return (
       <html lang="en">
@@ -29,4 +29,4 @@ class Page extends React.Component {
   }
 }
 
-export default Page;
+export default PagesBody;

@@ -40,7 +40,7 @@ class SocketIOConnection {
       secret: config.JWT_SECRET,
       handshake: true
     }));
-    this.transport.on('connection', this.handleConnection.bind(this));
+    this.transport.on(SocketEvents.CONNECTION, this.handleConnection.bind(this));
   }
 
 
@@ -98,7 +98,7 @@ class SocketIOConnection {
 
 
   broadcast(eventName, message) {
-    console.debug('Transmitted:', eventName);
+    console.debug('Broadcasted:', eventName);
     console.debug('With message:', message);
     this.transport.emit(eventName, message);
   }
