@@ -65,7 +65,7 @@
     "passport-steam": "^0.1.5",
     "password-hash": "^1.2.2",
     "random-js": "^1.0.4",
-    "react": "^0.13.3",
+    "react": "^0.14.9",
     "react-engine": "^1.6.0",
     "react-router": "^0.13.3",
     "react-tooltip": "^0.3.8",
