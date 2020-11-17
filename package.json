@@ -59,7 +59,7 @@
     "express": "^4.12.4",
     "jsonwebtoken": "^5.0.5",
     "lodash": "^3.10.1",
-    "merge": "^1.2.0",
+    "merge": "^2.1.0",
     "mysql": "^2.7.0",
     "passport": "^0.2.2",
     "passport-steam": "^0.1.5",
