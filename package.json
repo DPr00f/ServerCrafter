@@ -61,7 +61,7 @@
     "lodash": "^3.10.1",
     "merge": "^1.2.0",
     "mysql": "^2.7.0",
-    "passport": "^0.2.2",
+    "passport": "^0.6.0",
     "passport-steam": "^0.1.5",
     "password-hash": "^1.2.2",
     "random-js": "^1.0.4",
